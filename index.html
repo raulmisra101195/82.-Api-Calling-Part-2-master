@@ -16,6 +16,9 @@
         <table class="table">
             <thead>
               <tr>
+// The scope attribute specifies whether a header cell is a header for a column, row, or group of columns or rows.
+// The scope attribute has no visual effect in ordinary web browsers, but can be used by screen readers.
+
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Username</th>
@@ -70,10 +73,15 @@
 
                  //1. Lets create xhr object from XMLHttpRequest Class
                 //let object = new ClassName();
+                // To send a request to a server, we use the open() and send() methods of the XMLHttpRequest object:
                 let xhr = new XMLHttpRequest(); // XMLHttpRequest is predefined class
                 xhr.open(object.method,object.url);
                 xhr.send();
-                
+
+
+                //onload->A callback function is a function passed as a parameter to another function.
+                //In this case, the callback function should contain the code to execute when the response is ready.
+                //responseText ->get the response data as a string
                 xhr.onload = function(){
                     console.log(xhr);
                     //console.log(xhr.responseText);
@@ -93,7 +101,7 @@
                 console.log(response);
                 console.log(typeof response);
                 response = JSON.parse(response);
-
+                    // parse is used to convert JSON object to JSON string
                 console.log(response);
                 console.log(typeof response);
                 var tr = '';
